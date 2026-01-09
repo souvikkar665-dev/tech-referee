@@ -1,4 +1,5 @@
 name: Tech Referee
-description: Decision tool for frontend hosting platforms
+description: Decision-support tool comparing frontend hosting platforms
 language: JavaScript
 framework: None
+focus: Trade-off analysis and scalability

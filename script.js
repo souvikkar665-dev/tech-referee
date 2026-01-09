@@ -1,25 +1,59 @@
-function compare() {
+function referee() {
   const budget = document.getElementById("budget").value;
   const traffic = document.getElementById("traffic").value;
+  const management = document.getElementById("management").value;
 
-  let result = "";
+  let html = "";
 
-  if (budget === "low" && traffic === "low") {
-    result = `
-      <h3>Netlify</h3>
-      <p>✔ Free tier<br>✔ Easy setup<br>❌ Limited control</p>
-    `;
-  } else if (traffic === "high") {
-    result = `
-      <h3>AWS S3 + CloudFront</h3>
-      <p>✔ Highly scalable<br>✔ Cost effective<br>❌ Complex setup</p>
-    `;
-  } else {
-    result = `
-      <h3>Vercel</h3>
-      <p>✔ Great for React<br>✔ Fast deploys<br>❌ Paid for heavy usage</p>
-    `;
+  html += buildCard(
+    "Netlify",
+    "Best for quick launches and low traffic",
+    ["Free tier", "Very easy setup", "Good for portfolios"],
+    ["Limited scalability", "Less backend control"]
+  );
+
+  html += buildCard(
+    "Vercel",
+    "Optimized for modern frameworks",
+    ["Excellent performance", "CI/CD built-in", "Great DX"],
+    ["Costs rise with scale", "Platform lock-in"]
+  );
+
+  if (traffic === "high" || management === "advanced") {
+    html += buildCard(
+      "AWS S3 + CloudFront ⭐ MOST SCALABLE",
+      "Best for production-grade, high-scale systems",
+      [
+        "Massive scalability",
+        "Pay-as-you-go",
+        "Enterprise reliability",
+        "Global CDN"
+      ],
+      [
+        "Steep learning curve",
+        "Manual configuration required"
+      ]
+    );
   }
 
-  document.getElementById("result").innerHTML = result;
+  document.getElementById("result").innerHTML = html;
+}
+
+function buildCard(title, desc, pros, cons) {
+  return `
+    <div class="card">
+      <h3>${title}</h3>
+      <p>${desc}</p>
+
+      <strong>✅ Pros</strong>
+      <ul>
+        ${pros.map(p => `<li>${p}</li>`).join("")}
+      </ul>
+
+      <strong>❌ Cons</strong>
+      <ul>
+        ${cons.map(c => `<li>${c}</li>`).join("")}
+      </ul>
+    </div>
+  `;
 }

@@ -1,5 +1,7 @@
-This project helps users choose a frontend hosting platform
-by comparing trade-offs based on budget and traffic.
+This project follows the Referee philosophy by comparing
+multiple hosting platforms instead of suggesting a single answer.
 
-It follows the Referee challenge idea:
-compare options, not give a single answer.
+AWS is highlighted as the most scalable option only when
+user constraints justify its complexity.
+
+This helps users understand trade-offs and make informed decisions.

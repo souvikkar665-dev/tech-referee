@@ -3,31 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <title>Tech Referee</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h1>⚖️ Tech Referee</h1>
-  <p>Compare Frontend Hosting Options</p>
+  <header>
+    <h1>⚖️ Tech Referee</h1>
+    <p>Choose the right frontend hosting — with clarity, not confusion</p>
+  </header>
 
-  <div class="card">
-    <label>Budget</label>
-    <select id="budget">
-      <option value="low">Low</option>
-      <option value="medium">Medium</option>
-      <option value="high">High</option>
-    </select>
+  <section class="controls">
+    <div class="input-box">
+      <label>💰 Budget</label>
+      <select id="budget">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
 
-    <label>Traffic</label>
-    <select id="traffic">
-      <option value="low">Low</option>
-      <option value="high">High</option>
-    </select>
+    <div class="input-box">
+      <label>🚦 Expected Traffic</label>
+      <select id="traffic">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+    </div>
 
-    <button onclick="compare()">Compare</button>
-  </div>
+    <div class="input-box">
+      <label>⚙️ Management Preference</label>
+      <select id="management">
+        <option value="easy">Very Easy</option>
+        <option value="balanced">Balanced</option>
+        <option value="advanced">Advanced Control</option>
+      </select>
+    </div>
 
-  <div id="result"></div>
+    <button onclick="referee()">Compare Options</button>
+  </section>
+
+  <section id="result" class="result"></section>
+
+  <footer>
+    <p>Built for Kiro Week 6 – The Referee Challenge</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
